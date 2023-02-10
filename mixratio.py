@@ -4,26 +4,30 @@ Created on Tue Aug  2 09:36:00 2022
 
 @author: HUFFMP
 """
+# Importing necessary modules
+import pandas as pd # for data manipulation
+import sys # for exit command
+from time import sleep as slp # also for exit command
+from matplotlib import pyplot as plt # for data visualizations
 
-import pandas as pd
-import sys
-from time import sleep as slp
-from matplotlib import pyplot as plt
-
+"""
+stop()
+simple function that exits the program if something is incorrect or complete.
+"""
 def stop():
     print('Exiting mixratio.exe. Thanks for dropping by.')
     slp(2)
     sys.exit()
 
-datasource = input('DATA LOCATION (x to exit): ')
+datasource = input('DATA LOCATION (x to exit): ') # Asking for file location
 print('Loading file.')
 if datasource.lower()=='x':
     stop()
-fdtype = datasource[-3:]
+fdtype = datasource[-3:] # Distinguishing between csv and xlsx files
 if fdtype == 'csv':
-    df = pd.read_csv(datasource)
+    df = pd.read_csv(datasource) # Reading file
 elif fdtype == 'lsx':
-    df = pd.read_excel(datasource)
+    df = pd.read_excel(datasource) # Reading file
 else:
     print('filetype not recognized.')
     stop()
