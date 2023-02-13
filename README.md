@@ -61,7 +61,7 @@ Usage is simple -- change the parameters to {eclipse bsa} or {lumos hela} depend
 
 This file is an adaptation of the file mixratio.py as a PD node -- in the repository as mixratio_pd.py. This node is meant to receive an export from a TMT MS2 18-plex workflow, more specifically the PSMs file. The node removes a percentage of the highest and lowest abundance results from each lane based on a user-inputted parameter (default: 0.15), and calculates the mean abundance for each lane. From this calculation, the user is delivered information on the mix ratio of each lane as well as a suggested mix ratio to correct the existing imbalance. 
 
-![tmtmix](https://user-images.githubusercontent.com/90224098/218587685-91323754-79d2-4bcd-afc0-6627371c471a.png)
+![tmtmix](https://user-images.githubusercontent.com/90224098/218590640-f51f7434-aec7-4fdc-8709-d4733ceedebc.png)
 
 This node can be used to simplify TMT mixing to ensure even balance of TMT lanes. An excel file is attached, tmt mixratio testing.xlsx as an example output file that can then be rebalanced.
 
@@ -72,3 +72,4 @@ Example Results:
 
 ![bar](https://user-images.githubusercontent.com/90224098/218589948-38fff936-8008-4658-ba57-62459e44d9ab.png)
 ![TMTsummary15](https://user-images.githubusercontent.com/90224098/218589951-cfbdc6bc-886c-466c-8832-5c21b3efd0d6.png)
+
