@@ -21,15 +21,15 @@ Hi all, in this repository I'll be sharing my efforts to integrate custom Python
 
 # Background
 
-These nodes can be useful for optimizing the efficiency and replicability of experiments and analysis done using the proteome discoverer suite. All of these nodes were written in python and executed on a computer WITHOUT the python interpreter present. To do this, I installed a Python package called pyinstaller (pip install pyinstaller) from the spyder console. From there, one can use windows powershell to navigate to the directory where your python file is and use a pyinstaller command to convert a python file to an exe, that can run in a single click and on any computer with or without a python interpreter. There are two main options for this command, (pyinstaller file.py) and (pyinstaller file.py --onefile). The advantage of the second is that the exe will be written as a single large file, ~350 MB. If you are building multiple exes, though, I recommend using the first, which ports out the necessary python files (~800 MB, somehow) and the exe will reference them. In this case, the whole folder of supporting files must be moved to the workstation. From there, all one has to do is store the exe files on the local drive of the computer using PD. Their direct location can be called from PD's Scripting Node. The Scripting Node requests 5 parameters.
+These nodes can be useful for optimizing the efficiency and replicability of experiments and analysis done using the proteome discoverer suite. All of these nodes were written in python and executed on a computer WITHOUT the python interpreter present. To do this, I installed a Python package called pyinstaller (pip install pyinstaller) from the spyder console. From there, windows powershell can be used to navigate to the directory where the python file is and a pyinstaller command used to convert a python file to an exe, that can run in a single click and on any computer with or without a python interpreter. There are two main options for this command, (pyinstaller file.py) and (pyinstaller file.py --onefile). The advantage of the second is that the exe will be written as a single large file, ~350 MB. If you are building multiple exes, though, I recommend using the first, which ports out the necessary python files (~800 MB, somehow) and the exe will reference them. In this case, the whole folder of supporting files must be moved to the workstation. From there, all that is required is the storing of the the local drive of the computer using PD. Their direct location can be called from PD's Scripting Node. The Scripting Node requests 5 parameters.
 
 1. Path to executable
 
-  Simple enough. The path to your .exe file stored on the PD computer local drive.
+  The path to your .exe file stored on the PD computer local drive.
   
 2. Command line arguments.
 
-  Data that gets passed to your script. The first parameter should always be %NODEARGS%. This is the location of the information about your requested tables, which     will be important for any data processing. Other than that, you can pass any information you want as a string in this section. These values can be changed at runtime   by the user.
+  Data that gets passed to your script. The first parameter should always be %NODEARGS%. This is the location of the information about your requested tables, which will be important for any data processing. Other than that, you can pass any information you want as a string in this section. These values can be changed at runtime by the user.
   
 3. Requested Tables. 
 
